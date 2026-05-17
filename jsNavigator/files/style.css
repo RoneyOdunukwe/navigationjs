@@ -1,0 +1,117 @@
+*{
+    margin: 0; 
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;     
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.passport{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.physical_card{
+    width: 550px;
+    height: 550px;
+    background: green;
+    color: blue;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./wp5260097.jpg);
+    background-position: 55% 0%;
+    border-radius: 20px;
+    background-size: 330%;
+    box-shadow: 0 0 30px 10px rgb(57, 57, 57);
+}
+
+.getLocation{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: white;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(45, 45, 45);
+    border-radius: 6px;
+    /* padding: 4px; */
+    transform: scale(2);
+    position: relative;
+    background: transparent;
+}
+
+.getLocation::before{
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    top: -1px;
+    left: -1px;
+    opacity: 0;
+    background: linear-gradient(45deg, red, green, blue, yellow, orange, purple, pink, red);
+    animation: spin 5s infinite linear;
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    z-index: 1;
+    /* filter: blur(2px); */
+    transition: all 0.5s ease-in;
+    /* filter: blur(0.2); */
+    /* padding: 2px; */
+}
+
+@keyframes spin{
+    to{
+        background-position:  100% 0;
+    }
+}
+
+.getLocation::after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: 'Get Location';
+    position: absolute;
+    z-index: 2;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(82, 82, 82);
+    top: 0;
+    left: 0;
+    /* padding: 2px; */
+}
+
+.getLocation:active:after{
+    background: transparent;
+}
+
+.getLocation:hover::before{
+    opacity: 0.85;
+    /* filter: blur(0.5px); */
+}
+
+.getLocation:focus{
+    background-color: rgb(50, 50, 50);
+    outline: none;
+    border: none
+}
+
+.getLocation:hover{
+    background: transparent;
+}
+
+.location{
+    margin-top: 20px;
+}
